@@ -1,0 +1,39 @@
+@startuml quiz_package
+
+class Quiz {
+  Dictionary<Int, Challenge> callenges
+}
+
+class Question {
+  String type
+  String questionString
+}
+
+class Challenge {
+   String question
+   Int[] answers
+   String[] choices
+   String explanation
+}
+
+class MdFileProcessor {
+  extractQuiz(content):Quiz
+  partitionChallenge(content): String[]
+  extractExplain(challengeRaw): String
+  extractChoices(challengeRaw): String[]
+  extractQuestion(challengeRaw): String
+}
+
+class GithubLinkedInSource {
+}
+
+class LocalFileSource {
+}
+
+Challenge *-- Question
+Quiz o-- Challenge
+
+LocalFileSource --> MdFileProcessor
+GithubLinkedInSource --> MdFileProcessor
+
+@enduml

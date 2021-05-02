@@ -1,0 +1,40 @@
+{
+  "name": "quiz-too",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "watch": "npx ts-node-dev --respawn src/index.ts",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"**/*.ts\""
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wkm97/quiz-too.git"
+  },
+  "keywords": ["Quiz", "Markdown"],
+  "author": "wkm97",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wkm97/quiz-too/issues"
+  },
+  "homepage": "https://github.com/wkm97/quiz-too#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "eslint": "^7.25.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.5",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
