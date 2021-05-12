@@ -57,7 +57,7 @@ export class MdFileProcessor {
     });
     if (question === undefined) {
       // throw ReferenceError("Fail to extract question.");
-      question=""
+      question = "";
     }
     return trimNewline(question);
   }
