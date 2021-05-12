@@ -6,7 +6,7 @@ interface AssessmentInfo {
   questionCount: number;
 }
 
-export const getAssessmentInfos = async (): Promise<AssessmentInfo[]> => {
+const getAssessmentInfos = async (): Promise<AssessmentInfo[]> => {
   return axios
     .get("https://raw.githubusercontent.com/Ebazhanov/linkedin-skill-assessments-quizzes/master/README.md")
     .then((response) => {
@@ -17,7 +17,7 @@ export const getAssessmentInfos = async (): Promise<AssessmentInfo[]> => {
     });
 };
 
-export const extractAssessmentInfos = (content: string): AssessmentInfo[] => {
+const extractAssessmentInfos = (content: string): AssessmentInfo[] => {
   const rawListAssessment = content.match(/\| \[Adobe(.|\n)*\|/g);
   if (rawListAssessment === null) {
     throw ReferenceError("Fail to fetch list of assessment.");
@@ -35,3 +35,5 @@ export const extractAssessmentInfos = (content: string): AssessmentInfo[] => {
     .filter((item) => item.title !== "no-title");
   return assessmentInfos;
 };
+
+export { AssessmentInfo, getAssessmentInfos, extractAssessmentInfos };
