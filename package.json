@@ -5,6 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepare": "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
     "test": "jest --config jestconfig.json",
     "watch": "npx ts-node-dev --respawn src/index.ts",
     "build": "tsc",

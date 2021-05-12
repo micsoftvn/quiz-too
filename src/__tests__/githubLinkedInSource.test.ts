@@ -15,6 +15,6 @@ test("fetch information from github linkedin using extract", async () => {
 
 test("fetch information from github linkedin directly", async () => {
   const assessmentInfos = await githubLinkedinSource.getAssessmentInfos();
-  console.log(assessmentInfos);
+  // console.log(assessmentInfos);
   expect(assessmentInfos.length).toBeGreaterThanOrEqual(64);
 });

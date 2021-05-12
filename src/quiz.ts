@@ -15,7 +15,7 @@ export class Quiz {
 
   private sanitizeChallenges(challenges: Challenge[]): Challenge[] {
     return challenges.filter(
-      (challenge) => challenge.getIndex() > 0 && challenge.getAnswers().length > 0 && challenge.getChoices().length > 0,
+      (challenge) => challenge.getQuestion() !== "" && challenge.getIndex() > 0 && challenge.getAnswers().length > 0 && challenge.getChoices().length > 0,
     );
   }
 }
