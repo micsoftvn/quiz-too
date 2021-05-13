@@ -1,7 +1,7 @@
 import { MdFileProcessor } from "./mdFileProcessor";
-import { Challenge } from "./challenge";
+import { Challenge, ChallengeStatus, ChallengeType } from "./challenge";
 import { Quiz } from "./quiz";
 import * as githubLinkedinSource from "./githubLinkedinSource";
 import { AssessmentInfo } from "./githubLinkedinSource";
 
-export { Quiz, Challenge, MdFileProcessor, githubLinkedinSource, AssessmentInfo };
+export { Quiz, Challenge, ChallengeStatus, ChallengeType, MdFileProcessor, githubLinkedinSource, AssessmentInfo };

@@ -12,7 +12,7 @@
 #### Q2. How can you achieve runtime polymorphism in Java?
 
 - [ ] method overloading
-- [ ] method overrunning
+- [x] method overrunning
 - [x] method overriding
 - [ ] method calling
 

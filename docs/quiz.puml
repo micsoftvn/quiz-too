@@ -1,7 +1,7 @@
 @startuml quiz_package
 
 class Quiz {
-  Dictionary<Int, Challenge> callenges
+  Challenge[] callenges
 }
 
 class Question {
@@ -10,10 +10,15 @@ class Question {
 }
 
 class Challenge {
+   ChallengeStatus challengeStatus
+   Int index
    String question
    Int[] answers
    String[] choices
    String explanation
+   Int[] selectedChoices
+
+   arrayEqual(Int[] a, Int[] b): Boolean
 }
 
 class MdFileProcessor {
