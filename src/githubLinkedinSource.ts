@@ -29,7 +29,7 @@ const extractAssessmentInfos = (content: string): AssessmentInfo[] => {
       let url = (item.match(/[a-zA-Z\-()/%1-9.]+.md/g) || [null])[0];
       const questionCount = parseInt((item.match(/=>(.*)questions/i) || ["0", "0"])[1]);
       url = url?.replace(/^\(/g, "") || null;
-      url = "https://raw.githubusercontent.com/Ebazhanov/in-quiz-questions/master/" + url;
+      url = "https://raw.githubusercontent.com/Ebazhanov/linkedin-skill-assessments-quizzes/master/" + url;
       return { title, url, questionCount };
     })
     .filter((item) => item.title !== "no-title");

@@ -6,7 +6,7 @@ export enum ChallengeStatus {
 
 export enum ChallengeType {
   SINGLE,
-  MULTIPLE
+  MULTIPLE,
 }
 
 export class Challenge {
@@ -20,7 +20,7 @@ export class Challenge {
   private selectedChoices: number[];
 
   constructor(index: number, question: string, choices: string[], answers: number[], explanation: string | undefined) {
-    this.challengeType = answers.length > 1? ChallengeType.MULTIPLE : ChallengeType.SINGLE
+    this.challengeType = answers.length > 1 ? ChallengeType.MULTIPLE : ChallengeType.SINGLE;
     this.challengeStatus = ChallengeStatus.IDLE;
     this.index = index;
     this.question = question;
@@ -31,7 +31,7 @@ export class Challenge {
   }
 
   public getChallengeType(): ChallengeType {
-    return this.challengeType
+    return this.challengeType;
   }
 
   public getChallengeStatus(): ChallengeStatus {
@@ -56,6 +56,10 @@ export class Challenge {
 
   public setChoices(newChoices: string[]): void {
     this.choices = newChoices;
+  }
+
+  public getSelectedChoices(): number[] {
+    return this.selectedChoices;
   }
 
   public setSelectedChoices(selectedChoices: number[]): void {
