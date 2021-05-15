@@ -1,25 +1,37 @@
 import { Challenge } from "./challenge";
 
+type Challenges = Map<number, Challenge>;
+
 export class Quiz {
   private challengeCount: number;
-  private challenges: Challenge[];
+  private challenges: Challenges;
 
-  constructor(challenges: Challenge[]) {
+  constructor(challenges: Challenges) {
     this.challenges = this.sanitizeChallenges(challenges);
-    this.challengeCount = challenges.length;
+    this.challengeCount = challenges.size;
   }
 
-  public getChallenges(): Challenge[] {
+  public getChallenges(): Challenges {
     return this.challenges;
   }
 
-  private sanitizeChallenges(challenges: Challenge[]): Challenge[] {
-    return challenges.filter(
-      (challenge) =>
+  public setChallenge(challenge: Challenge): void {
+    const idx = challenge.getIndex();
+    this.challenges.set(idx, challenge);
+  }
+
+  private sanitizeChallenges(challenges: Challenges): Challenges {
+    const newChallenge = new Map();
+    challenges.forEach((challenge) => {
+      if (
         challenge.getQuestion() !== "" &&
         challenge.getIndex() > 0 &&
         challenge.getAnswers().length > 0 &&
-        challenge.getChoices().length > 0,
-    );
+        challenge.getChoices().length > 0
+      ) {
+        newChallenge.set(challenge.getIndex(), challenge);
+      }
+    });
+    return newChallenge;
   }
 }

@@ -24,6 +24,6 @@ test("get challenge", async () => {
   );
 
   const quiz = mdFileProcessor.getQuiz();
-  expect(quiz.getChallenges().length).toBeGreaterThanOrEqual(70);
+  expect(quiz.getChallenges().size).toBeGreaterThanOrEqual(70);
   // console.log(quiz.getChallenges());
 });

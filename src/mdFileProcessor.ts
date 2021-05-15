@@ -138,7 +138,11 @@ export class MdFileProcessor {
     if (this.challengeRawPartition === undefined) {
       throw ReferenceError("Fail to get question.");
     }
-    const challenges = this.challengeRawPartition.map((item) => this.getChallenge(item));
+    const challenges = new Map();
+    this.challengeRawPartition.forEach((item) => {
+      const challenge = this.getChallenge(item)
+      challenges.set(challenge.getIndex(), challenge)
+    });
     return new Quiz(challenges);
   }
 }
