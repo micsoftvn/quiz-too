@@ -15,6 +15,10 @@ export class Quiz {
     return this.challenges;
   }
 
+  public getChallengeCount(): number {
+    return this.challengeCount;
+  }
+
   public setChallenge(challenge: Challenge): void {
     const idx = challenge.getIndex();
     this.challenges.set(idx, challenge);
